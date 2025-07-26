@@ -8,9 +8,8 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      color: white;
       background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-      text-align: center;
+      color: white;
       overflow-x: hidden;
     }
 
@@ -20,47 +19,48 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      position: relative;
+      text-align: center;
+      padding: 20px;
     }
 
-    .main img.logo {
-      width: 150px;
+    .logo {
+      width: 200px;
+      max-width: 80%;
       margin-bottom: 20px;
     }
 
     .coming-soon {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-
-    .insta {
-      margin-top: 10px;
+      font-size: 26px;
+      margin: 10px 0 20px;
     }
 
     .insta a {
       color: white;
       text-decoration: none;
-      font-size: 20px;
+      font-size: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .insta img {
-      width: 30px;
-      vertical-align: middle;
-      margin-right: 8px;
+      width: 28px;
     }
 
     .gallery {
-      position: relative;
       height: 100vh;
+      position: relative;
     }
 
     .gallery img {
       position: absolute;
+      top: 0; left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       opacity: 0;
       transition: opacity 1.5s ease-in-out;
+      z-index: 0;
     }
 
     .gallery img.active {
@@ -69,6 +69,7 @@
   </style>
 </head>
 <body>
+
   <div class="main">
     <img src="logo.png" alt="TK Ridez Logo" class="logo" />
     <div class="coming-soon">Coming Soon</div>
@@ -94,5 +95,6 @@
       images[current].classList.add("active");
     }, 4000);
   </script>
+
 </body>
 </html>

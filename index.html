@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TK Ridez - Coming Soon</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .main {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .main img.logo {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
+    .coming-soon {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .insta {
+      margin-top: 10px;
+    }
+
+    .insta a {
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    .insta img {
+      width: 30px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    .gallery {
+      position: relative;
+      height: 100vh;
+    }
+
+    .gallery img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+
+    .gallery img.active {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <img src="logo.png" alt="TK Ridez Logo" class="logo" />
+    <div class="coming-soon">Coming Soon</div>
+    <div class="insta">
+      <a href="https://www.instagram.com/tkridez" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Icon" />
+        Follow us on Instagram
+      </a>
+    </div>
+  </div>
+
+  <div class="gallery">
+    <img src="image1.jpg" class="active" />
+    <img src="image2.jpg" />
+  </div>
+
+  <script>
+    let current = 0;
+    const images = document.querySelectorAll(".gallery img");
+    setInterval(() => {
+      images[current].classList.remove("active");
+      current = (current + 1) % images.length;
+      images[current].classList.add("active");
+    }, 4000);
+  </script>
+</body>
+</html>
